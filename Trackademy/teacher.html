@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trackademy — Teacher Dashboard</title>
+  <link rel="stylesheet" href="teacher.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-wrap">
+    <header class="topbar">
+      <div class="brand">TrackAdeny</div>
+      <div class="user-info">
+        <span id="teacherName">Welcome, Teacher</span>
+        <button id="logoutBtn" class="btn small ghost">Logout</button>
+      </div>
+      <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="icon">🌙</span>
+      </div>
+    </header>
+
+    <main class="dashboard-container">
+      <!-- Class-wide analytics -->
+      <section class="analytics">
+        <h2>Class Attendance Overview</h2>
+        <div class="charts-grid">
+          <div class="chart-card fade-up">
+            <h3>Average Attendance per Day</h3>
+            <canvas id="classDaywiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Attendance by Subject</h3>
+            <canvas id="classSubjectwiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Monthly Trend</h3>
+            <canvas id="classMonthwiseChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Individual student section -->
+      <section class="students-section">
+        <h2>Individual Student Attendance</h2>
+        <div class="student-search card fade-up">
+          <label for="studentSelect">Select Student</label>
+          <select id="studentSelect">
+            <!-- Populated dynamically from Supabase -->
+          </select>
+        </div>
+        <div class="student-charts-grid">
+          <div class="chart-card fade-up">
+            <h3>Daywise</h3>
+            <canvas id="studentDaywiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Subjectwise</h3>
+            <canvas id="studentSubjectwiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Monthwise</h3>
+            <canvas id="studentMonthwiseChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Edit attendance -->
+      <section class="edit-attendance">
+        <h2>Edit Attendance</h2>
+        <form id="editAttendanceForm" class="card fade-up">
+          <label for="editDate">Date</label>
+          <input type="date" id="editDate" required>
+          <label for="editSubject">Subject</label>
+          <input type="text" id="editSubject" placeholder="Enter Subject" required>
+          <label for="editStatus">Status</label>
+          <select id="editStatus" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+          </select>
+          <button type="submit" class="btn primary">Update Attendance</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="teacher.js"></script>
+</body>
+</html>

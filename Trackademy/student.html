@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trackademy — Student Dashboard</title>
+  <link rel="stylesheet" href="student.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-wrap">
+    <header class="topbar">
+      <div class="brand">Trackademy</div>
+      <div class="user-info">
+        <span id="studentName">Student Name</span>
+        <button id="logoutBtn" class="btn small ghost">Logout</button>
+      </div>
+      <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="icon">🌙</span>
+      </div>
+    </header>
+
+    <main class="dashboard-container">
+      <!-- Attendance Analytics -->
+      <section class="analytics">
+        <h2>Attendance Analytics</h2>
+        <div class="charts-grid">
+          <div class="chart-card fade-up">
+            <h3>Daywise Attendance</h3>
+            <canvas id="daywiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Subjectwise Attendance</h3>
+            <canvas id="subjectwiseChart"></canvas>
+          </div>
+          <div class="chart-card fade-up">
+            <h3>Monthwise Attendance</h3>
+            <canvas id="monthwiseChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complaint Registration -->
+      <section class="complaints">
+        <h2>Register a Complaint</h2>
+        <form id="complaintForm" class="card fade-up">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Enter subject" required>
+          <label for="description">Description</label>
+          <textarea id="description" placeholder="Describe your issue" required></textarea>
+          <button type="submit" class="btn primary">Submit Complaint</button>
+        </form>
+
+        <div class="complaint-list fade-up">
+          <h3>Your Complaints</h3>
+          <ul id="complaintsList"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="student.js"></script>
+</body>
+</html>

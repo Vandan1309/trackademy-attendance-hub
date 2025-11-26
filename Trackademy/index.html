@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trackademy — Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="container">
+      <section class="left-pane">
+        <div class="hero">
+          <h1>Smart, Automated Attendance</h1>
+          <p>Face-recognition powered attendance for schools, colleges, and enterprises. Secure • Fast • Accurate</p>
+          <div class="features">
+            
+            <div>• Real-time attendance</div>
+            <div>• Minimal setup</div>
+            <div>• Secure & encrypted</div>
+          </div>
+        </div>
+        <div class="brand-art" aria-hidden="true">
+          <svg viewBox="0 0 800 200" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-opacity="0.14" stop-color="var(--accent)"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="200" fill="url(#g1)" />
+          </svg>
+        </div>
+      </section>
+
+  <div class="page-wrap">
+    <header class="topbar">
+      <div class="brand">Trackademy</div>
+      
+    </header>
+
+    
+
+      <section class="right-pane">
+        <div class="card">
+          <h2>Sign in to TrackAdemy</h2>
+          <form id="loginForm" autocomplete="on">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@school.edu" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="••••••••" required>
+
+            
+
+            <button type="submit" class="btn primary">Sign in</button>
+
+          
+
+           
+
+            
+
+            <p class="disclaimer">By signing in you agree to our <a class="link" href="terms.pdf">Terms and Privacy.</a></p>
+          </form>
+        </div>
+
+        <footer class="footnote">© <span id="year"></span> TrackAdeny — Face Recognition Attendance</footer>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
+
+
